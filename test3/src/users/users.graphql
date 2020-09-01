@@ -1,0 +1,15 @@
+type User {
+  id: ID!
+  privileges: [String]
+}
+
+type Query {
+  user(userID: String!): User
+}
+
+type Mutation {
+  createUser(user: UserInput!): User
+}
+input UserInput {
+  privileges: [String]
+}

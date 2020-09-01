@@ -1,0 +1,22 @@
+type Author {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  dob: Float!
+}
+
+input AuthorInput {
+  firstName: String!
+  lastName: String!
+  dob: Float!
+}
+
+type Query {
+  author(authorID: String!): Author
+}
+
+type Mutation {
+  createAuthor(author: AuthorInput!): Author
+}
+
+# export default Author

@@ -1,0 +1,30 @@
+# import Author from "./authors.graphql",
+enum PostCategory {
+  PROMOTIONAL
+  CONTROVERSIAL
+  LIFESTYLE
+  PERSONAL
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+  categories: [PostCategory]!
+  createdAt: Float!
+  createdBy: Author!
+}
+
+input PostInput {
+  title: String!
+  content: String!
+  categories: [PostCategory]!
+}
+
+type Query {
+  post(postID: String!): Post
+}
+
+type Mutation {
+  createPost(postInput: PostInput!): Post
+}
